@@ -14,6 +14,8 @@
   Plug 'cohama/lexima.vim'
   Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
+  Plug 'scrooloose/nerdtree'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
   
   if has('fzf')
     Plug '/usr/local/opt/fzf'
@@ -61,6 +63,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
   " Deoplete
   let g:deoplete#enable_at_startup = 1
+
+  " NerdTree
+  nmap <F6> :NERDTreeToggle<CR>
 
   " FZF
   nnoremap <leader>e :Files<cr>

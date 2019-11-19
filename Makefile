@@ -6,20 +6,20 @@ upgrade:
 	@echo "Updating branch..."
 	git pull
 	@echo "Removing unused plugins..."
-	nvim +PlugClean[!]
+	nvim +PlugClean[!] +qall
 	@echo "Updating plugins..."
-	nvim +PlugUpdate
+	nvim +PlugUpdate +qall
 
 full-upgrade: upgrade
 	./vim_user_install.sh
 
 plugins-clean: bundle/vim-plug
 	@echo "Removing unused plugins..."
-	nvim +PlugClean! +qall
+	nvim +PlugClean[!] +qall
 
 plugins-install: bundle/vim-plug
 	@echo "Installing plugins..."
-	nvim +PlugInstall
+	nvim +PlugInstall +qall
 
 plugins-purge:
 	@echo "Removing all plugins..."
@@ -27,7 +27,7 @@ plugins-purge:
 
 plugins-upgrade: bundle/vim-plug
 	@echo "Installing plugins..."
-	nvim +PlugUpdate
+	nvim +PlugUpdate +qall
 
 install: bundle/vim-plug
 	@echo "Copying nvim init"
